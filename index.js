@@ -1,9 +1,9 @@
-var rng = RNG
+var random = Random
 
-module.exports = rng
-Object.assign(rng, RNG())
+module.exports = random
+Object.assign(random, Random())
 
-function RNG(initialSeed) {
+function Random(initialSeed) {
 
   if (isNaN(initialSeed))
     initialSeed = Math.random() * 256
