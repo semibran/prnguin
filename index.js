@@ -10,7 +10,7 @@ function Random(initialSeed) {
 
   var currentSeed = initialSeed
 
-  return { get: get, choose: choose, chance: chance, seed: seed }
+  return { get: get, choose: choose, chance: chance, shuffle: shuffle, seed: seed }
 
   function get(min, max) {
     var a = arguments.length
@@ -26,6 +26,10 @@ function Random(initialSeed) {
     return items[get(items.length)]
   }
 
+  function shuffle(items) {
+    return items.sort(byRandom)
+  }
+
   function chance(chance) {
     if (isNaN(chance))
       chance = 2
@@ -36,5 +40,9 @@ function Random(initialSeed) {
     if (!isNaN(newSeed))
       initialSeed = currentSeed = newSeed
     return currentSeed
+  }
+
+  function byRandom(a, b) {
+    return get() < 0.5
   }
 }

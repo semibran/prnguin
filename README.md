@@ -28,6 +28,12 @@ if (Random.chance(100)) { // 1% chance of a special item drop
 }
 ```
 
+#### `shuffle`
+```javascript
+var numbers = [1, 3, 5, 7, 9]
+Random.shuffle(numbers) // -> randomly shuffles `numbers` in place
+```
+
 #### `seed`
 ```javascript
 Random.seed(newSeedNumber)
