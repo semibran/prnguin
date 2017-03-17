@@ -1,21 +1,24 @@
-var random = Random
-
-module.exports = random
-Object.assign(random, Random())
+module.exports = Object.assign(Random, Random())
 
 function Random(initialSeed) {
 
   if (isNaN(initialSeed))
-    initialSeed = Math.random() * 256
+    initialSeed = Math.random() * Number.MAX_SAFE_INTEGER
 
   var currentSeed = initialSeed
 
-  return { get: get, choose: choose, chance: chance, shuffle: shuffle, seed: seed }
+  return {
+    get: get,
+    choose: choose,
+    chance: chance,
+    shuffle: shuffle,
+    seed: seed
+  }
 
   function get(min, max) {
     var a = arguments.length
     if (a === 0) {
-      let x = Math.sin(currentSeed++) * 256
+      var x = Math.sin(currentSeed++) * Number.MAX_SAFE_INTEGER
       return x - Math.floor(x)
     } else if (a === 1)
       max = min, min = 0
