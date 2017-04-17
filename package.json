@@ -1,7 +1,7 @@
 {
   "name": "random",
-  "version": "1.1.1",
-  "description": "Simple and seedable pseudorandom number generator",
+  "version": "1.0.0",
+  "description": "Generate pseudorandom numbers with seedable utility functions",
   "license": "MIT",
   "author": "Brandon Semilla <semibran@gmail.com>",
   "main": "index.js",

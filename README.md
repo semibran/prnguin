@@ -1,60 +1,69 @@
 # random
-> Simple and seedable pseudorandom number generator
+> Generate pseudorandom numbers with seedable utility functions
 
-**This RNG uses "arithmetic methods" for simplicity.**
+This module contains a collection of simple "generators", i.e. functions that transform a "seed" into a predictable output value. Note that the `Seed` passed into a generator is mutated as a side effect - so while a generator is not a pure function, it is ultimately more intuitive and pleasant to use than if that were the case.
 
-## Usage
-
-### Methods
-
-#### `get`
+## usage
 ```javascript
-Random.get()       // -> random number between 0 and 1
-Random.get(10)     // -> random integer between 0 and 9 (`get` is non-inclusive)
-Random.get(1, 10)  // -> random integer between 1 and 9
-Random.get(10) + 1 // -> random integer between 1 and 10
+const Random = require('random')
+const { Seed, float, int, boolean, char, sample, shuffle } = Random // or whatever methods you wish to expose
 ```
 
-#### `choose`
+### `Seed`
+Creates a `Seed` object from the given `Number`.
 ```javascript
-var fruits = ['apple', 'orange', 'banana']
-var fruit = Random.choose(fruits) // -> may be 'apple', 'orange' or 'banana'
+var seed = Random.Seed(value) // -> Seed
+```
+This is just syntactic sugar for creating an object via `{ value }`.
+
+
+### `float`
+Generates a float between `min` and `max`, **exclusively**.
+```javascript
+var float = Random.float(0, 1)(seed) // -> Number between 0 and 1 (i.e. seedable Math.random())
 ```
 
-#### `chance`
+
+### `int`
+Generates an integer between `min` and `max`, **inclusively**.
 ```javascript
-if (Random.chance(100)) { // 1% chance of a special item drop
-  dropReallySpecialItem()
-}
+var int = Random.int(1, 10)(seed) // -> Number between 1 and 10
 ```
 
-#### `shuffle`
+
+### `boolean`
+Generates a boolean (`true`/`false`).
 ```javascript
-var numbers = [1, 3, 5, 7, 9]
-Random.shuffle(numbers) // -> randomly shuffles `numbers` in place
+var boolean = Random.boolean(seed) // -> Boolean
 ```
 
-#### `seed`
+
+### `char`
+Generates a lowercase letter.
 ```javascript
-Random.seed(newSeedNumber)
-Random.choose(results) // -> same result every time
-Random.seed() // -> same seed every time (increased by 1)
+var char = Random.char(seed) // -> String from 'a' to 'z'
 ```
 
-### Factory
-Call `Random` to create a new Random instance with its own independent state.
 
+### `sample`
+Picks a random item from the specified array.
 ```javascript
-var random1 = Random(seed)
-var random2 = Random(seed)
-
-var planet1 = random1.choose(planets)
-var planet2 = random2.choose(planets)
-
-rng1.seed() === rng2.seed() // -> true
+var sample = Random.sample(['foo', 'bar', 'baz']) // -> 'foo', 'bar', or 'baz'
 ```
 
-If no `seed` is specified, it will default to a random number.
 
-## License
+### `shuffle`
+Generates a shuffled version of the specified array. Unlike `Array.sort`, the array items are not rearranged in place.
+```javascript
+var items = Random.shuffle([1, 2, 3, 4, 5])
+```
+
+
+
+## install
+```sh
+npm install semibran/random
+```
+
+## license
 MIT
