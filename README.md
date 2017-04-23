@@ -6,7 +6,7 @@ This module contains a collection of simple "generators", i.e. functions that tr
 ## usage
 ```javascript
 const Random = require('random')
-const { Seed, float, int, boolean, char, sample, shuffle } = Random // or whatever methods you wish to expose
+const { Seed, float, int, boolean, char, choose, shuffle } = Random // or whatever methods you wish to expose
 ```
 
 ### `Seed`
@@ -45,10 +45,10 @@ var char = Random.char(seed) // -> String from 'a' to 'z'
 ```
 
 
-### `sample`
+### `choose`
 Picks a random item from the specified array.
 ```javascript
-var sample = Random.sample(['foo', 'bar', 'baz']) // -> 'foo', 'bar', or 'baz'
+var choose = Random.choose(['foo', 'bar', 'baz']) // -> 'foo', 'bar', or 'baz'
 ```
 
 
