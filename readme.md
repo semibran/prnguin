@@ -1,5 +1,5 @@
 # frand
-> Generate pseudorandom numbers using seedable utility functions
+> Pure functions for deterministically generating pseudorandom numbers
 
 This module contains a small collection of simple "generators", i.e. pure functions that transform a `seed` (really just a `Number`) into a predictable output value.
 

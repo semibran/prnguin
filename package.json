@@ -1,7 +1,7 @@
 {
   "name": "frand",
   "version": "0.1.0",
-  "description": "Generate pseudorandom numbers with seedable utility functions",
+  "description": "Pure functions for deterministically generating pseudorandom numbers",
   "keywords": [
 		"random",
 		"numbers",
