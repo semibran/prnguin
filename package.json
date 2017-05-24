@@ -1,10 +1,15 @@
 {
-  "name": "random",
-  "version": "1.0.0",
+  "name": "frand",
+  "version": "0.1.0",
   "description": "Generate pseudorandom numbers with seedable utility functions",
+  "keywords": [
+		"random",
+		"numbers",
+		"functional"
+  ],
+  "main": "index.js",
   "license": "MIT",
-  "author": "Brandon Semilla <semibran@gmail.com>",
-  "main": "lib",
+  "author": "Brandon Semilla (https://github.com/semibran)",
   "repository": {
     "type": "git",
     "url": "https://github.com/semibran/random.git"
