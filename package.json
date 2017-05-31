@@ -1,13 +1,13 @@
 {
   "name": "frand",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Pure functions for deterministically generating pseudorandom numbers",
   "keywords": [
 		"random",
 		"numbers",
 		"functional"
   ],
-  "main": "lib",
+  "main": "index",
   "license": "MIT",
   "author": "Brandon Semilla (https://github.com/semibran)",
   "repository": {
