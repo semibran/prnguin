@@ -8,6 +8,7 @@ You will usually want to change the seed after every use (typically by increment
 ## usage
 ```javascript
 const { percent, integer, boolean } = require('frand')
+const { choose, shuffle } = require('frand/array')
 ```
 
 ### `percent(seed)`
@@ -42,6 +43,8 @@ if (boolean(seed++)) {
   doors.push(connector)
 }
 ```
+
+The following two methods can be found in `frand/array`.
 
 ## install
 ```sh
