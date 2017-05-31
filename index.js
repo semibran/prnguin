@@ -1,7 +1,6 @@
 exports.percent = percent
 exports.integer = integer
 exports.boolean = boolean
-exports.choose = choose
 
 var sin = Math.sin
 var floor = Math.floor
@@ -18,8 +17,4 @@ function integer(min, max, seed) {
 
 function boolean(seed) {
 	return percent(seed) < 0.5
-}
-
-function choose(array, seed) {
-	return array[integer(0, array.length - 1, seed)]
 }

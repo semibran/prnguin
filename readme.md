@@ -3,39 +3,44 @@
 
 This module contains a small collection of simple "generators", i.e. pure functions that transform a `seed` (really just a `Number`) into a predictable output value.
 
-You will usually want to change the seed on every usage (like by incrementing it) unless your goal is to get the same results multiple times.
+You will usually want to change the seed after every use (typically by incrementing it) unless your goal is to get the same results multiple times.
 
 ## usage
 ```javascript
-const Random = require('frand')
+const { percent, integer, boolean } = require('frand')
 ```
 
-### `percent`
-Generate a number between `0` and `1` using `seed`.
+### `percent(seed)`
+Generate a number between `0` and `1` using `seed`, **exclusively**.
 ```js
-> percent(Math.SQRT2)
-0.6455985140055418
+if (percent(seed++) < 0.1) {
+  money.type = 'gold'
+} else {
+  money.type = 'copper'
+}
 ```
+`1` **is not** included in the set of possible return values, so this function is essentially a seedable version of `Math.random()`.
 
-### `integer`
-Generate an integer between `min` and `max` using `seed`.
+### `integer(min, max, seed)`
+Generate an integer between `min` and `max` using `seed`, **inclusively**.
 ```js
-> integer(1, 10, Math.SQRT1_2)
-6
+function roll(seed) {
+  return integer(1, 6, seed)
+}
 ```
+Unlike `percent`, the upper number (`max`) is included in the set of possible return values.
 
-### `boolean`
+### `boolean(seed)`
 Choose either `true` and `false` based on the given `seed`.
 ```js
-> boolean(Math.PI)
-true
-```
-
-### `choose`
-Choose a random element from the given array using `seed`.
-```js
-> choose(['apple', 'orange', 'banana'], Math.LN2)
-'orange'
+if (boolean(seed++)) {
+  for (var connector of connectors) {
+    floors.push(connector)
+  }
+} else {
+  var connector = choose(connectors, seed++)
+  doors.push(connector)
+}
 ```
 
 ## install
