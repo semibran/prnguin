@@ -39,12 +39,24 @@ if (boolean(seed++)) {
     floors.push(connector)
   }
 } else {
-  var connector = connectors[integer(0, connectors.length - 1, seed++)]
+  var connector = choose(connectors, seed++)
   doors.push(connector)
 }
 ```
 
 The following two methods can be found in `frand/array`.
+
+### `choose(array, seed)`
+Chooses a random element from `array` using `seed`.
+```js
+var card = choose(deck, seed++)
+```
+
+### `shuffle(array, seed)`
+Shuffles the items in `array` in place using `seed`.
+```js
+shuffle(deck, seed++)
+```
 
 ## install
 ```sh
