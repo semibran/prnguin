@@ -38,7 +38,7 @@ if (boolean(seed++)) {
     floors.push(connector)
   }
 } else {
-  var connector = choose(connectors, seed++)
+  var connector = connectors[integer(0, connectors.length - 1, seed++)]
   doors.push(connector)
 }
 ```
