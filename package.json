@@ -5,9 +5,9 @@
   "keywords": [
 		"random",
 		"numbers",
-		"functional"
+    "rng"
   ],
-  "main": "index",
+  "main": "index.js",
   "license": "MIT",
   "author": "Brandon Semilla (https://github.com/semibran)",
   "repository": {

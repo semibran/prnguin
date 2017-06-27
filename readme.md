@@ -1,14 +1,12 @@
 # frand
-> Pure functions for deterministically generating pseudorandom numbers
-
-This module contains a small collection of simple "generators", i.e. pure functions that transform a `seed` (really just a `Number`) into a predictable output value.
+This module contains a small collection of simple "generators", i.e. pure functions that transform a number into a predictable output value.
 
 You will usually want to change the seed after every use (typically by incrementing it) unless your goal is to get the same results multiple times.
 
 ## usage
-```javascript
-const { percent, integer, boolean } = require('frand')
-const { choose, shuffle } = require('frand/array')
+[![NPM](https://nodei.co/npm/frand.png?mini)](https://www.npmjs.com/package/frand)
+```js
+const { percent, integer, boolean, choose, shuffle } = require('frand')
 ```
 
 ### `percent(seed)`
@@ -44,8 +42,6 @@ if (boolean(seed++)) {
 }
 ```
 
-The following two methods can be found in `frand/array`.
-
 ### `choose(array, seed)`
 Chooses a random element from `array` using `seed`.
 ```js
@@ -58,10 +54,5 @@ Shuffles the items in `array` in place using `seed`.
 shuffle(deck, seed++)
 ```
 
-## install
-```sh
-npm install frand
-```
-
 ## license
-MIT
+[MIT](https://opensource.org/licenses/MIT) © [Brandon Semilla](https://git.io/semibran)
