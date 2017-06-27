@@ -7,7 +7,7 @@ function roll(seed) {
   return integer(1, 6, seed)
 }
 ```
-Additionally, all the functions in this module derive their seemingly random nature from `percent`, further demonstrating their composable nature.
+Additionally, all the functions in this module derive their seemingly random nature from `percent`, further demonstrating their composability.
 
 ## usage
 [![NPM](https://nodei.co/npm/frand.png?mini)](https://www.npmjs.com/package/frand)
@@ -58,6 +58,7 @@ Shuffles the items in `array` in place using `seed`.
 ```js
 shuffle(deck, seed++)
 ```
+`shuffle` also returns the mutated array, reminiscent of `Array.prototype.sort`.
 
 ## license
 [MIT](https://opensource.org/licenses/MIT) © [Brandon Semilla](https://git.io/semibran)
