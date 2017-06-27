@@ -1,13 +1,13 @@
 # frand
 This module contains a small collection of simple "generators", i.e. pure functions that transform a number into a predictable output value. You will usually want to change the seed after every use (typically by incrementing it) unless your goal is to get the same results multiple times.
 
-Since generators are just functions, crafting your own custom generators to match specific scenarios is a trivial matter. The following example is a generator which simulates the rolling of a six-sided die.
+Since generators are just functions, crafting your own custom generators to match specific scenarios is a trivial matter. For example, the following generator simulates the rolling of a six-sided die.
 ```js
 function roll(seed) {
   return integer(1, 6, seed)
 }
 ```
-All the functions in this module derive their seemingly random nature from `percent`, further demonstrating their composable nature.
+Additionally, all the functions in this module derive their seemingly random nature from `percent`, further demonstrating their composable nature.
 
 ## usage
 [![NPM](https://nodei.co/npm/frand.png?mini)](https://www.npmjs.com/package/frand)
