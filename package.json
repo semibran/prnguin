@@ -3,8 +3,8 @@
   "version": "0.3.4",
   "description": "Pure functions for deterministically generating pseudorandom numbers",
   "keywords": [
-		"random",
-		"numbers",
+    "random",
+    "numbers",
     "rng"
   ],
   "main": "index.js",
