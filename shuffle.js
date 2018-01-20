@@ -1,4 +1,4 @@
-var boolean = require('./boolean')
+var boolean = require("./boolean")
 
 module.exports = function shuffle(array, seed) {
   return array.sort(function () {
