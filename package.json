@@ -1,6 +1,6 @@
 {
  "name": "prnguin",
- "version": "1.0.0",
+ "version": "0.0.0",
  "description": "Pure functions for deterministically generating pseudorandom numbers",
  "author": "Brandon Semilla (https://github.com/semibran)",
  "repository": "semibran/random",
