@@ -12,7 +12,7 @@ Additionally, all the functions in this module derive their seemingly random nat
 ## usage
 [![NPM](https://nodei.co/npm/prnguin.png?mini)](https://www.npmjs.com/package/prnguin)
 ```js
-const { percent, integer, boolean, pick, shuffle } = require('prnguin')
+const { percent, integer, boolean, pick, shuffle } = require("prnguin")
 ```
 
 ### `percent(seed)`
