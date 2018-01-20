@@ -14,6 +14,10 @@ Additionally, all the functions in this module derive their seemingly random nat
 ```js
 const { percent, integer, boolean, pick, shuffle } = require("prnguin")
 ```
+Alternatively, you can import the modules you want individually:
+```js
+const percent = require("prnguin/percent")
+```
 
 ### `percent(seed)`
 Generate a number between `0` and `1` using `seed`, **exclusively**.
@@ -38,11 +42,11 @@ Unlike `percent`, the upper number (`max`) is included in the set of possible re
 Choose either `true` and `false` based on the given `seed`.
 ```js
 if (boolean(seed++)) {
-  for (var connector of connectors) {
+  for (let connector of connectors) {
     floors.push(connector)
   }
 } else {
-  var connector = pick(connectors, seed++)
+  let connector = pick(connectors, seed++)
   doors.push(connector)
 }
 ```
@@ -50,7 +54,7 @@ if (boolean(seed++)) {
 ### `pick(array, seed)`
 Chooses a random element from `array` using `seed`.
 ```js
-var card = pick(deck, seed++)
+let card = pick(deck, seed++)
 ```
 
 ### `shuffle(array, seed)`
@@ -58,7 +62,7 @@ Shuffles the items in `array` in place using `seed`.
 ```js
 shuffle(deck, seed++)
 ```
-`shuffle` also returns the mutated array, reminiscent of `Array.prototype.sort`.
+`shuffle` also returns the mutated array, courtesy of `Array.prototype.sort`.
 
 ## license
 [MIT](https://opensource.org/licenses/MIT) © [Brandon Semilla](https://git.io/semibran)
