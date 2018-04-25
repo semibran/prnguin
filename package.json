@@ -5,6 +5,15 @@
  "author": "Brandon Semilla (https://github.com/semibran)",
  "repository": "semibran/random",
  "license": "MIT",
- "main": "index.js",
- "keywords": ["random", "number", "generator", "rng", "prng"]
+ "main": "./lib/random.js",
+ "keywords": [
+  "random",
+  "number",
+  "generator",
+  "rng",
+  "prng"
+ ],
+ "devDependencies": {
+  "tape-modern": "^1.0.1"
+ }
 }
