@@ -14,18 +14,14 @@ Additionally, all the functions in this module derive their seemingly random nat
 ```js
 const { percent, integer, boolean, pick, shuffle } = require("prnguin")
 ```
-Alternatively, you can import the modules you want individually:
-```js
-const percent = require("prnguin/percent")
-```
 
 ### `percent(seed)`
 Generate a number between `0` and `1` using `seed`, **exclusively**.
 ```js
 if (percent(seed++) < 0.1) {
-  money.type = 'gold'
+  money.type = "gold"
 } else {
-  money.type = 'copper'
+  money.type = "copper"
 }
 ```
 `1` **is not** included in the set of possible return values, so this function is essentially a seedable version of `Math.random()`.
@@ -62,7 +58,6 @@ Shuffles the items in `array` in place using `seed`.
 ```js
 shuffle(deck, seed++)
 ```
-`shuffle` also returns the mutated array, courtesy of `Array.prototype.sort`.
 
 ## license
 [MIT](https://opensource.org/licenses/MIT) © [Brandon Semilla](https://git.io/semibran)
